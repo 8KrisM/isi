@@ -26,3 +26,11 @@ class Item(BaseModel):
 async def BFS_endpoint(item: Item):
     response = await BFS(item.maze)
     return response
+
+
+Použitie webovej aplikácie na anotáciu textov pre klasifi-
+káciu textov môže byť dôležitým krokom pri trénovaní strojových učiacich mo-
+delov alebo pri vytváraní dátových sád pre analýzu sentimentu, kategorizáciu
+správ alebo iné úlohy spracovania prirodzeného jazyka. Táto metóda umožňuje
+ľuďom jednoduchý a efektívny spôsob, ako prispieť k vytváraniu trénovacích dát
+a pomáha trénovacím algoritmom lepšie rozumieť textovým dátam.
