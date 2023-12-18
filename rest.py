@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 import utils
 
-from algorithms import BFS
+from algorithms import BFS, DFS, A_star, greedy_search
 
 app = FastAPI()
 
@@ -27,10 +27,17 @@ async def BFS_endpoint(item: Item):
     response = await BFS(item.maze)
     return response
 
+@app.post("/DFS")
+async def BFS_endpoint(item: Item):
+    response = await DFS(item.maze)
+    return response
 
-Použitie webovej aplikácie na anotáciu textov pre klasifi-
-káciu textov môže byť dôležitým krokom pri trénovaní strojových učiacich mo-
-delov alebo pri vytváraní dátových sád pre analýzu sentimentu, kategorizáciu
-správ alebo iné úlohy spracovania prirodzeného jazyka. Táto metóda umožňuje
-ľuďom jednoduchý a efektívny spôsob, ako prispieť k vytváraniu trénovacích dát
-a pomáha trénovacím algoritmom lepšie rozumieť textovým dátam.
+@app.post("/A-star")
+async def BFS_endpoint(item: Item):
+    response = await A_star(item.maze)
+    return response
+
+@app.post("/greedy_search")
+async def BFS_endpoint(item: Item):
+    response = await greedy_search(item.maze)
+    return response

@@ -23,3 +23,14 @@ def get_startpoint(maze):
             if cell == 'O':
                 return i, j
     return None
+
+def get_goalpoint(maze):
+    for i, row in enumerate(maze):
+        for j, cell in enumerate(row):
+            if cell == 'X':
+                return i, j
+    return None
+
+def heuristic(row, col, goal_row, goal_col):
+    # Manhanttan distance heuristic
+    return abs(row - goal_row) + abs(col - goal_col)
